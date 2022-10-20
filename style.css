@@ -1,24 +1,26 @@
 body {
-    background: url(IMG/Question-Marks-1024x683.jpg) no-repeat center center/cover;
+    background: url(IMG/istockphoto-1305169776-612x612.jpg) no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     }
 
-    .accordion {
+.accordion {
     width: 50%;
     background-image: linear-gradient(to right, skyblue , pink);
     padding: 27px;
     border-radius: 30px;
+    height: 70%;
     }
 
-    .accordion .accordion-title {
+.accordion .accordion-title {
     margin-bottom: 17px;
     text-align: center;
     }
 
-    .accordion .content-container .question {
+.accordion .content-container .question {
     padding: 10px 0px;
     font-size: 22px;
     cursor: pointer;
@@ -26,23 +28,52 @@ body {
     position: relative;
     }
 
-    .accordion .content-container .question::after {
+.accordion .content-container .question::after {
     content: '+';
     position: absolute;
     right: -5px;
     }
 
-    .accordion .content-container .answer {
-    padding-top: 15px;
+.accordion .content-container .answer {
+    padding-top: 16px;
     font-size: 17px;
     line-height: 1.5;
     width: 100%;
+
+
     height: 0px;
     overflow: hidden;
     transition: .5s;
     }
-    
-    .accordion .content-container.active .answer {
+
+.accordion .content-container.active .answer {
     height: 150px;
     }
-    
+
+.accordion .content-container.active .question {
+        font-size: 18px;
+        transition: .5s;
+    }
+
+.accordion .content-container.active .question::after {
+        content: '_';
+        font-size: 30px;
+        transition: .5s;
+        bottom: 50%;
+
+    }
+
+    .accordion::-webkit-scrollbar {
+        display: none;
+
+      }
+
+   .accordion {
+    overflow-y: scroll;
+   }
+
+   .accordion .content-container .question:hover {
+
+    color: green;
+
+   }
